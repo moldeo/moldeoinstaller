@@ -1,0 +1,18 @@
+[submodule "libmoldeo"]
+	path = libmoldeo
+	url = https://github.com/moldeo/libmoldeo.git
+[submodule "moldeoplayer"]
+	path = moldeoplayer
+	url = https://github.com/moldeo/moldeoplayer
+[submodule "moldeoplugins"]
+	path = moldeoplugins
+	url = https://www.github.com/moldeo/moldeoplugins.git
+[submodule "libwxmoldeocontrols"]
+	path = libwxmoldeocontrols
+	url = https://www.github.com/moldeo/libwxmoldeocontrols.git
+[submodule "moldeodirector"]
+	path = moldeodirector
+	url = https://www.github.com/moldeo/moldeodirector.git
+[submodule "moldeonet"]
+	path = moldeonet
+	url = https://www.github.com/moldeo/moldeonet.git
