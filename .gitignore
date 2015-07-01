@@ -1,0 +1,56 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Autoconf/automake Folders
+m4/
+ltmain.sh
+config.guess
+config.status
+config.sub
+config.log
+config.h
+install-sh
+libtool
+missing
+aclocal.m4
+autom4te.cache/
+compile
+depcomp
+Makefile
+Makefile.in
+config.h.in
+.deps/
+.libs/
+moldeoerrors.txt
+moldeolog.txt
+cout.txt
+configure
+stamp-h1
+*.layout
+
