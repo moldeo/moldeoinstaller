@@ -17,16 +17,19 @@ cd build
 cd ../libmoldeo
 git checkout master && git pull
 ./autogen_x64.sh
+make
 sudo make install
 
 cd ../libwxmoldeocontrols
 git checkout master && git pull
 ./autogen_x64.sh
+make
 sudo make install
 
 cd ../moldeoplayer
 git checkout master && git pull
 ./autogen_x64.sh
+make
 sudo make install
 
 cd ../moldeoplugins
@@ -35,11 +38,15 @@ cd IODevices/Kinect
 ./install_OpenNI.sh
 cd ../../
 ./autogen_x64.sh
+make
 sudo make install
 
 cd ../moldeodirector
 git checkout master && git pull
 ./autogen_x64.sh
+make
 sudo make install
 
+cd ../moldeonet
+./node-webkit_install.sh
 
