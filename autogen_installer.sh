@@ -1,6 +1,8 @@
 
 #clone submodules repositories (libmoldeo, moldeodirector, moldeoplugins, libwxmoldeocontrols, moldeoplayer )
 git submodule update --init
+git submodule foreach git checkout master
+git submodule foreach git pull
 
 #libmoldeo
 sudo apt-get install autoconf libtool automake libmuparser-dev lua5.1-dev libtinyxml-dev libgtk2.0-dev libsdl1.2-dev libsdl2-dev libglew-dev freeglut3-dev libgle3-dev ftgl-dev libfreeimage-dev libalut-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libboost-dev libboost-filesystem-dev libboost-thread-dev  libboost-system-dev libasio-dev autoconf-archive check
