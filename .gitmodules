@@ -16,3 +16,6 @@
 [submodule "moldeonet"]
 	path = moldeonet
 	url = https://www.github.com/moldeo/moldeonet.git
+[submodule "moldeosamples"]
+	path = moldeosamples
+	url = http://github.com/moldeo/moldeosamples
