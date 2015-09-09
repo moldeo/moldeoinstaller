@@ -1,6 +1,6 @@
 moldeoinstaller
 ===============
-h
+
 #Installer package for Moldeo 1.0
 
 This package has all necesarry submodules to run all Moldeo 1.0 Beta platform interfaces from source. You need to download the source from github, and follow the instructions for your operating system. This is open source software.
