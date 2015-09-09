@@ -1,22 +1,32 @@
 moldeoinstaller
 ===============
+h
+#Installer package for Moldeo 1.0
 
-Installer package for Moldeo 1.0
+This package has all necesarry submodules to run all Moldeo 1.0 Beta platform interfaces from source. You need to download the source from github, and follow the instructions for your operating system. This is open source software.
 
-Download, compile and install.
+####Linux
 
-For linux users, just run in a terminal window:
+Just run in a terminal window:
 
-./autogen_installer.sh
+    git clone https://github.com/moldeo/moldeoinstaller
+    cd moldeoinstaller
+    ./autogen_installer.sh
 
-For mac users, just run in a terminal window:
+####Mac OSX
 
-./autogen_installer_osx.sh
+Just run in a terminal window:
+
+    git clone https://github.com/moldeo/moldeoinstaller
+    cd moldeoinstaller
+    ./autogen_installer_osx.sh
 
 
-For windows users, just check binary installers at:
+####Windows
 
-http://www.moldeo.org/downloads
+Just check binary installers at:
+
+[Moldeo Download Section](http://www.moldeo.org/downloads)
 
 
 
