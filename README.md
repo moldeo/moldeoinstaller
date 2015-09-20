@@ -7,20 +7,27 @@ This package has all necesarry submodules to run all Moldeo 1.0 Beta platform in
 
 ####Linux
 
-Just run in a terminal window:
+Just run in a terminal window to compile and install:
 
     git clone https://github.com/moldeo/moldeoinstaller
     cd moldeoinstaller
     ./autogen_installer.sh
 
+Then launch Moldeo 1.0 Beta with:
+
+    ./moldeo.sh
+	
 ####Mac OSX
 
-Just run in a terminal window:
+Just run in a terminal window to compile and install:
 
     git clone https://github.com/moldeo/moldeoinstaller
     cd moldeoinstaller
     ./autogen_installer_osx.sh
 
+Then launch Moldeo 1.0 Beta with:
+
+    ./moldeo.sh
 
 ####Windows
 
