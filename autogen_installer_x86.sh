@@ -54,6 +54,6 @@ cd ../moldeonet
 
 cd ../moldeosamples
 git checkout master && git pull
-./autogen_x64.sh
+./autogen.sh --prefix=/usr --libdir=/usr/lib
 make
 sudo make install
