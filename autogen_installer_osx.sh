@@ -113,4 +113,11 @@ git checkout master && git pull
 ./autogen_osx.sh
 sudo make install
 
+cd ../moldeonet
+./node-webkit_install.sh
 
+cd ../moldeosamples
+git checkout master && git pull
+./autogen_osx.sh
+make
+sudo make install
