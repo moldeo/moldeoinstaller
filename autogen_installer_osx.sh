@@ -77,7 +77,7 @@ port install graphviz
 port install wxgtk-2.8
 #port install wxWidgets-2.8
 port install wx-common
-
+port install portmidi
 
 #clone submodules repositories (libmoldeo, moldeodirector, moldeoplugins, libwxmoldeocontrols, moldeoplayer )
 git submodule update --init
@@ -86,7 +86,7 @@ mkdir build
 cd build
 
 cd ../libmoldeo
-git checkout master && git pull
+git checkout rc1gst1 && git pull
 ./autogen_osx.sh
 sudo make install
 
@@ -96,25 +96,25 @@ git checkout master && git pull
 sudo make install
 
 cd ../moldeoplayer
-git checkout master && git pull
+git checkout rc1gst1 && git pull
 ./autogen_osx.sh
 sudo make install
 
 cd ../moldeoplugins
-git checkout master && git pull
-cd IODevices/Kinect
-./install_OpenNI.sh
-cd ../../
+git checkout rc1 && git pull
+#cd IODevices/Kinect
+#./install_OpenNI.sh
+#cd ../../
 ./autogen_osx.sh
 sudo make install
 
-cd ../moldeodirector
-git checkout master && git pull
-./autogen_osx.sh
-sudo make install
+#cd ../moldeodirector
+#git checkout master && git pull
+#./autogen_osx.sh
+#sudo make install
 
 cd ../moldeonet
-./node-webkit_install.sh
+./node-webkit_install_osx.sh
 
 cd ../moldeosamples
 git checkout master && git pull
