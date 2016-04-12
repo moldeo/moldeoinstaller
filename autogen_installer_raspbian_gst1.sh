@@ -12,24 +12,11 @@ sudo apt-get install libopencv-dev doxygen graphviz openjdk-7-jdk
 sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
 #Moldeo Director
 sudo apt-get install libgtk2.0-dev   wx-common  libwxgtk2.8-dev
+sudo apt-get install libgles2-mesa-dev libegl1-mesa-dev mesa-utils-extra libwayland-egl1-mesa
+sudo apt-get install locate libudev-dev
 
-mkdir build
 cd build
-
-
-#sudo apt-get install locate libudev-dev
-#wget http://libsdl.org/release/SDL2-2.0.3.tar.gz
-#tar xvfz SDL2-2.0.3.tar.gz
-#rm SDL2-2.0.3.tar.gz
-#cd SDL2-2.0.3
-#mkdir build
-#cd build
-# "--disable-video-opengl" is used to disable the software implementation of desktop OpenGL on the Pi
-# "--host=*" is used to force the Raspberry Pi host. See issue #395 on GitHub for details on why.
-#../configure --prefix=/usr --libdir=/usr/lib CPPFLAGS="-I/opt/vc/include" LDFLAGS="-L/opt/vc/lib" --host=armv7l-raspberry-linux-gnueabihf --disable-pulseaudio --disable-esd --disable-video-mir --disable-video-wayland --disable-video-x11 --disable-video-opengl
-#make
-#sudo make install
-#cd ../../
+./build_SDL2_gles.sh
 
 cd ../libmoldeo
 git checkout rc1gst1 && git pull
@@ -50,7 +37,7 @@ make
 sudo make install
 
 cd ../moldeonet
-./node-webkit_install.sh
+./node-webkit_install_arm.sh
 
 cd ../moldeosamples
 git checkout master && git pull
