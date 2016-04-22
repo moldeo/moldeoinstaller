@@ -50,7 +50,7 @@ make
 sudo make install
 
 cd ../moldeonet
-./node-webkit_install.sh
+./node-webkit_install_arm.sh
 
 cd ../moldeosamples
 git checkout master && git pull
