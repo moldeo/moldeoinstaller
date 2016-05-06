@@ -1,0 +1,20 @@
+Source: moldeo
+Section: Applications/Graphics
+Priority: optional
+Maintainer: Moldeo Interactive <info@moldeointeractive.com.ar>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev
+Standards-Version: 3.9.4
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Git: git://git.debian.org/collab-maint/moldeo.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/moldeo.git;a=summary
+
+Package: moldeo
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}, moldeonet, libmoldeo, moldeoplugins, moldeosamples, moldeoplayer
+Description: Moldeo Software
+ Moldeo is a multimedia interactive framework based on C++, OpenGL, Gstreamer, HTML5 Interfaces, Javascript and wxWidgets.
+
+Package: moldeo-doc
+Architecture: all
+Description: Documentation for Moldeo Software
+ Moldeo is a multimedia interactive framework based on C++, OpenGL, Gstreamer, HTML5 Interfaces, Javascript and wxWidgets.

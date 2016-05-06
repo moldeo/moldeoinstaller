@@ -1,3 +1,6 @@
+deb/
+buildpkg_logs.txt
+
 # Compiled Object files
 *.slo
 *.lo
