@@ -143,7 +143,7 @@
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
-	<string>moldeoplayersdl2</string>
+	<string>nwjs</string>
 	<key>CFBundleGetInfoString</key>
 	<string>Moldeo 1.0</string>
 	<key>CFBundleIconFile</key>

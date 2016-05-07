@@ -9,7 +9,8 @@ libdir='/opt/local/lib'
 prefix='/opt/local'
 
 bindir=${prefix}/bin
-datadir=${prefix}/share/moldeo/data
+moldeodir=${prefix}/share/moldeo
+datadir=${moldeodir}/data
 modulesdir=${libdir}/moldeo
 docdir=${prefix}/share/doc/moldeo
 preeffectsdir=${modulesdir}/preeffects
@@ -18,13 +19,18 @@ posteffectsdir=${modulesdir}/posteffects
 iodevicesdir=${modulesdir}/iodevices
 mastereffectsdir=${modulesdir}/mastereffects
 resourcesdir=${modulesdir}/resources
-moldeoversiondir=${prefix}/share/moldeo
+moldeoversiondir=${moldeodir}
 
 moldeoplayersdl2=${bindir}/moldeoplayersdl2
+moldeocontrol=
 moldeologo=${datadir}/icons/moldeologo.png
 moldeotrans=${datadir}/icons/moldeotrans.png
 moldeofont=${datadir}/fonts/Tuffy.ttf
+moldeoversiontxt=${moldeoversiondir}/moldeoversion.txt
 mp2='Moldeo.app/Contents/MacOS/moldeoplayersdl2'
+moldeobasic=${moldeodir}/basic
+moldeosamples=${moldeodir}/samples
+moldeotaller=${moldeodir}/taller
 
 mkdir moldeo.iconset
 sips -z 16 16     ${moldeologo} --out moldeo.iconset/icon_16x16.png
@@ -39,9 +45,17 @@ sips -z 512 512   ${moldeologo} --out moldeo.iconset/icon_512x512.png
 cp ${moldeologo} moldeo.iconset/icon_512x512@2x.png
 iconutil -c icns moldeo.iconset
 rm -R moldeo.iconset
-
-
 rm -Rf Moldeo.app
+rm -Rf MoldeoControl
+rm -Rf ./build
+
+cp -R ../../moldeonet/MoldeoControl ./MoldeoControl
+cd MoldeoControl && npm install
+cd ../
+sudo nwbuild --platforms "osx32" --version 0.12.2 --macIcns ./moldeo.icns --appName "Moldeo" --appVersion "1.0.0" ./MoldeoControl
+sudo chown -R moldeo:staff ./build
+cp -R ./build/MoldeoControl/osx32/MoldeoControl.app Moldeo.app
+
 mkdir Moldeo.app
 mkdir Moldeo.app/Contents
 mkdir Moldeo.app/Contents/MacOS
@@ -61,18 +75,22 @@ mkdir Moldeo.app/Contents/Resources/plugins/mastereffects
 
 mkdir Moldeo.app/Contents/PlugIns
 mkdir Moldeo.app/Contents/SharedSupport
+cp ${moldeoversiontxt} Moldeo.app/Contents/Resources
 cp ${moldeologo} Moldeo.app/Contents/Resources
 cp ${moldeologo} Moldeo.app/Contents/Resources/data/icons
 cp ${moldeotrans} Moldeo.app/Contents/Resources/data/icons
 cp ${moldeofont} Moldeo.app/Contents/Resources/data/fonts
 
-cp ${effectsdir}/* Moldeo.app/Contents/Resources/plugins/effects
-cp ${iodevicesdir}/* Moldeo.app/Contents/Resources/plugins/iodevices
-cp ${preeffectsdir}/* Moldeo.app/Contents/Resources/plugins/preeffects
-cp ${posteffectsdir}/* Moldeo.app/Contents/Resources/plugins/posteffects
-cp ${mastereffectsdir}/* Moldeo.app/Contents/Resources/plugins/mastereffects
-cp ${resourcesdir}/* Moldeo.app/Contents/Resources/plugins/resources
+cp ${effectsdir}/*.dylib Moldeo.app/Contents/Resources/plugins/effects
+cp ${iodevicesdir}/*.dylib Moldeo.app/Contents/Resources/plugins/iodevices
+cp ${preeffectsdir}/*.dylib Moldeo.app/Contents/Resources/plugins/preeffects
+cp ${posteffectsdir}/*.dylib Moldeo.app/Contents/Resources/plugins/posteffects
+cp ${mastereffectsdir}/*.dylib Moldeo.app/Contents/Resources/plugins/mastereffects
+cp ${resourcesdir}/*.dylib Moldeo.app/Contents/Resources/plugins/resources
 
+cp -R ${moldeobasic} Moldeo.app/Contents/Resources/
+cp -R ${moldeosamples} Moldeo.app/Contents/Resources/
+cp -R ${moldeotaller} Moldeo.app/Contents/Resources/
 
 cp ${moldeologo} Moldeo.app/Contents/Resources
 cp moldeo.icns Moldeo.app/Contents/Resources
