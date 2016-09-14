@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Moldeo">
+		<Project filename="../../libmoldeo/build/win/libmoldeo.cbp" />
+		<Project filename="../../moldeoplayer/moldeoplayersdl2/build/win/moldeoplayersdl2.cbp" />
+		<Project filename="../../moldeoplugins/Effects/Image/image.cbp" />
+		<Project filename="../../moldeoplugins/Effects/Icon/icon.cbp" />
+		<Project filename="../../moldeoplugins/Effects/Plane/plane.cbp" />
+		<Project filename="../../moldeoplugins/Effects/ImageFlow/imageflow.cbp" />
+		<Project filename="../../moldeoplugins/Effects/ImageFlow3D/imageflow3d.cbp" />
+		<Project filename="../../moldeoplugins/Effects/Movie/movie.cbp" />
+		<Project filename="../../moldeoplugins/Effects/ParticlesSimple/particlessimple.cbp" />
+		<Project filename="../../moldeoplugins/Effects/Tunel/tunel.cbp" />
+		<Project filename="../../moldeoplugins/Effects/Grid/grid.cbp" />
+		<Project filename="../../moldeoplugins/Effects/Camera/camera.cbp" />
+		<Project filename="../../moldeoplugins/Effects/Text3D/text3d.cbp" />
+		<Project filename="../../moldeoplugins/PreEffects/Erase/erase.cbp" />
+		<Project filename="../../moldeoplugins/PreEffects/MirrorG/mirrorg.cbp" />
+		<Project filename="../../moldeoplugins/Resources/OpenCV/opencv.cbp" />
+		<Project filename="../../moldeoplugins/Resources/TrackerKLT/trackerklt.cbp" />
+		<Project filename="../../moldeoplugins/PostEffects/Debug/debug.cbp" />
+		<Project filename="../../moldeoplugins/PostEffects/PostProcess2d/postprocess2d.cbp" />
+		<Project filename="../../moldeoplugins/PostEffects/VideoWallMorphing/videowallmorphing.cbp" />
+		<Project filename="../../moldeoplugins/Effects/Assimp/assimp.cbp" />
+		<Project filename="../../moldeoplugins/Effects/CubeMap/cubemap.cbp" />
+		<Project filename="../../moldeoplugins/Effects/Sound/sound.cbp" />
+		<Project filename="../../moldeoplugins/Effects/Sound3D/sound3d.cbp" />
+		<Project filename="../../moldeodirector/build/win/moldeodirector.cbp" />
+		<Project filename="../../moldeoplugins/IODevices/Keyboard/keyboard.cbp" />
+		<Project filename="../../moldeoplugins/IODevices/Kinect/kinect.cbp" />
+		<Project filename="../../moldeoplugins/IODevices/KinectGPU/kinectgpu.cbp" />
+		<Project filename="../../moldeoplugins/IODevices/Midi/midi.cbp" />
+		<Project filename="../../moldeoplugins/IODevices/Mixer/mixer.cbp" />
+		<Project filename="../../moldeoplugins/IODevices/Mouse/mouse.cbp" />
+		<Project filename="../../moldeoplugins/IODevices/NetOscIn/netoscin.cbp" />
+		<Project filename="../../moldeoplugins/IODevices/NetOscOut/netoscout.cbp" />
+		<Project filename="../../moldeoplugins/IODevices/Serial/serial.cbp" />
+		<Project filename="../../moldeoplugins/IODevices/Tablet/tablet.cbp" />
+		<Project filename="../../moldeoplugins/IODevices/NetTUIOIn/nettuioin.cbp" />
+		<Project filename="../../moldeoplugins/MasterEffects/Channel/channel.cbp" />
+		<Project filename="../../moldeoplugins/MasterEffects/Ligia/ligia.cbp" />
+		<Project filename="../../moldeoplugins/MasterEffects/MasterChannel/masterchannel.cbp" />
+		<Project filename="../../moldeoplugins/MasterEffects/Panel/panel.cbp" />
+		<Project filename="../../moldeoplugins/MasterEffects/PresetPanel/presetpanel.cbp" />
+		<Project filename="../../moldeoplayer/moldeoplayersdl/build/win/moldeoplayersdl.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>
