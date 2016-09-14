@@ -20,19 +20,7 @@ cd build
 
 cd ../libmoldeo
 git checkout master && git pull
-./autogen.sh
-make
-sudo make install
-
-cd ../libwxmoldeocontrols
-git checkout master && git pull
-./autogen.sh
-make
-sudo make install
-
-cd ../moldeoplayer
-git checkout master && git pull
-./autogen.sh
+./autogen.sh --prefix=/usr
 make
 sudo make install
 
@@ -41,21 +29,36 @@ git checkout master && git pull
 cd IODevices/Kinect
 ./install_OpenNI.sh
 cd ../../
-./autogen.sh
+./autogen.sh --prefix=/usr
 make
 sudo make install
 
-cd ../moldeodirector
-git checkout master && git pull
-./autogen.sh
-make
-sudo make install
 
 cd ../moldeonet
 ./node-webkit_install.sh
 
 cd ../moldeosamples
 git checkout master && git pull
-./autogen.sh
+./autogen.sh --prefix=/usr
 make
 sudo make install
+
+cd ../libwxmoldeocontrols
+git checkout master && git pull
+./autogen.sh --prefix=/usr
+make
+sudo make install
+
+cd ../moldeoplayer
+git checkout master && git pull
+./autogen.sh --prefix=/usr
+make
+sudo make install
+
+cd ../moldeodirector
+git checkout master && git pull
+./autogen.sh --prefix=/usr
+make
+sudo make install
+
+
