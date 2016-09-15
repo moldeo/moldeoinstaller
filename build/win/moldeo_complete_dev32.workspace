@@ -25,7 +25,6 @@
 		<Project filename="../../moldeoplugins/Effects/CubeMap/cubemap.cbp" />
 		<Project filename="../../moldeoplugins/Effects/Sound/sound.cbp" />
 		<Project filename="../../moldeoplugins/Effects/Sound3D/sound3d.cbp" />
-		<Project filename="../../moldeodirector/build/win/moldeodirector.cbp" />
 		<Project filename="../../moldeoplugins/IODevices/Keyboard/keyboard.cbp" />
 		<Project filename="../../moldeoplugins/IODevices/Kinect/kinect.cbp" />
 		<Project filename="../../moldeoplugins/IODevices/KinectGPU/kinectgpu.cbp" />
@@ -43,5 +42,7 @@
 		<Project filename="../../moldeoplugins/MasterEffects/Panel/panel.cbp" />
 		<Project filename="../../moldeoplugins/MasterEffects/PresetPanel/presetpanel.cbp" />
 		<Project filename="../../moldeoplayer/moldeoplayersdl/build/win/moldeoplayersdl.cbp" />
+		<Project filename="../../libwxmoldeocontrols/build/win/wxMoldeoControls.cbp" />
+		<Project filename="../../moldeodirector/build/win/moldeodirector.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
