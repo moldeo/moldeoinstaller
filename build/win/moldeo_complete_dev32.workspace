@@ -10,6 +10,7 @@
 		<Project filename="../../moldeoplugins/Effects/ImageFlow3D/imageflow3d.cbp" />
 		<Project filename="../../moldeoplugins/Effects/Movie/movie.cbp" />
 		<Project filename="../../moldeoplugins/Effects/ParticlesSimple/particlessimple.cbp" />
+		<Project filename="../../moldeoplugins/Effects/ParticlesFractal/particlesfractal.cbp" />
 		<Project filename="../../moldeoplugins/Effects/Tunel/tunel.cbp" />
 		<Project filename="../../moldeoplugins/Effects/Grid/grid.cbp" />
 		<Project filename="../../moldeoplugins/Effects/Camera/camera.cbp" />
