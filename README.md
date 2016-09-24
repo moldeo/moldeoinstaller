@@ -28,8 +28,7 @@ Just check binary installers at:
 You must install:
 
 [Gstreamer Package](http://www.moldeo.org/archivos/binario/gstreamer-1.0-1.9.1-x86_64.pkg)
-
-[Moldeo Mac OSX Installer DMG](http://www.moldeo.org/archivos/binario/MoldeoInstall.dmg)
+and [Moldeo Mac OSX Installer DMG](http://www.moldeo.org/archivos/binario/MoldeoInstall.dmg)
 
 or just run in a terminal window to compile and install:
 
