@@ -101,9 +101,67 @@ cp Info.plist Moldeo.app/Contents
 cp ${libdir}/libSDL2-2.0.0.dylib Moldeo.app/Contents/MacOS
 install_name_tool -change ${libdir}/libSDL2-2.0.0.dylib @executable_path/libSDL2-2.0.0.dylib ${mp2}
 
+#libXcursor.1.dylib
+cp ${libdir}/libXcursor.1.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libXcursor.1.dylib @executable_path/libXcursor.1.dylib Moldeo.app/Contents/MacOS/libSDL2-2.0.0.dylib
+
+#libXinerama.1.dylib
+cp ${libdir}/libXinerama.1.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libXinerama.1.dylib @executable_path/libXinerama.1.dylib Moldeo.app/Contents/MacOS/libSDL2-2.0.0.dylib
+
+#libXi.6.dylib
+cp ${libdir}/libXi.6.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libXi.6.dylib @executable_path/libXi.6.dylib Moldeo.app/Contents/MacOS/libSDL2-2.0.0.dylib
+
+#libXss.1.dylib
+cp ${libdir}/libXss.1.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libXss.1.dylib @executable_path/libXss.1.dylib Moldeo.app/Contents/MacOS/libSDL2-2.0.0.dylib
+
+#libXxf86vm.1.dylib
+cp ${libdir}/libXxf86vm.1.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libXxf86vm.1.dylib @executable_path/libXxf86vm.1.dylib Moldeo.app/Contents/MacOS/libSDL2-2.0.0.dylib
+
+
 #libmoldeo
 cp ${libdir}/libmoldeo.0.dylib Moldeo.app/Contents/MacOS
 install_name_tool -change ${libdir}/libmoldeo.0.dylib @executable_path/libmoldeo.0.dylib ${mp2}
+
+#libalut.0.dylib
+cp ${libdir}/libalut.0.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libalut.0.dylib @executable_path/libalut.0.dylib Moldeo.app/Contents/Resources/plugins/effects/libmoldeo_sound3d.dylib
+
+#libopenal.1.dylib
+cp ${libdir}/libopenal.1.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libopenal.1.dylib @executable_path/libopenal.1.dylib Moldeo.app/Contents/Resources/plugins/effects/libmoldeo_sound3d.dylib
+
+#libsndfile.1.dylib
+cp ${libdir}/libsndfile.1.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libsndfile.1.dylib @executable_path/libsndfile.1.dylib Moldeo.app/Contents/Resources/plugins/effects/libmoldeo_sound3d.dylib
+
+#libFLAC.8.dylib
+cp ${libdir}/libFLAC.8.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libFLAC.8.dylib @executable_path/libFLAC.8.dylib Moldeo.app/Contents/MacOS/libsndfile.1.dylib
+
+#libvorbisenc.2.dylib
+cp ${libdir}/libvorbisenc.2.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libvorbisenc.2.dylib @executable_path/libvorbisenc.2.dylib Moldeo.app/Contents/MacOS/libsndfile.1.dylib
+
+
+#libvorbis.0.dylib
+cp ${libdir}/libvorbis.0.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libvorbis.0.dylib @executable_path/libvorbis.0.dylib Moldeo.app/Contents/MacOS/libsndfile.1.dylib
+install_name_tool -change ${libdir}/libvorbis.0.dylib @executable_path/libvorbis.0.dylib Moldeo.app/Contents/MacOS/libvorbisenc.2.dylib
+
+
+#libogg.0.dylib
+cp ${libdir}/libogg.0.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libogg.0.dylib @executable_path/libogg.0.dylib Moldeo.app/Contents/MacOS/libsndfile.1.dylib
+install_name_tool -change ${libdir}/libogg.0.dylib @executable_path/libogg.0.dylib Moldeo.app/Contents/MacOS/libFLAC.8.dylib
+install_name_tool -change ${libdir}/libogg.0.dylib @executable_path/libogg.0.dylib Moldeo.app/Contents/MacOS/libvorbis.0.dylib
+install_name_tool -change ${libdir}/libogg.0.dylib @executable_path/libogg.0.dylib Moldeo.app/Contents/MacOS/libvorbisenc.2.dylib
+
+
+
 
 #libfreeimage
 cp ${libdir}/libfreeimage.3.dylib Moldeo.app/Contents/MacOS
@@ -127,10 +185,10 @@ install_name_tool -change ${libdir}/libboost_system-mt.dylib @executable_path/li
 install_name_tool -change ${libdir}/libboost_system-mt.dylib @executable_path/libboost_system-mt.dylib Moldeo.app/Contents/MacOS/libboost_thread-mt.dylib
 install_name_tool -change ${libdir}/libboost_system-mt.dylib @executable_path/libboost_system-mt.dylib Moldeo.app/Contents/MacOS/libboost_filesystem-mt.dylib
 
-#libGLEW.1.13.0.dylib
-cp ${libdir}/libGLEW.1.13.0.dylib Moldeo.app/Contents/MacOS
-install_name_tool -change ${libdir}/libGLEW.1.13.0.dylib @executable_path/libGLEW.1.13.0.dylib ${mp2}
-install_name_tool -change ${libdir}/libGLEW.1.13.0.dylib @executable_path/libGLEW.1.13.0.dylib Moldeo.app/Contents/MacOS/libmoldeo.0.dylib
+#libGLEW.2.0.0.dylib
+cp ${libdir}/libGLEW.2.0.0.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libGLEW.2.0.0.dylib @executable_path/libGLEW.2.0.0.dylib ${mp2}
+install_name_tool -change ${libdir}/libGLEW.2.0.0.dylib @executable_path/libGLEW.2.0.0.dylib Moldeo.app/Contents/MacOS/libmoldeo.0.dylib
 
 #lua-5.1/liblua-5.1.dylib
 cp ${libdir}/lua-5.1/liblua-5.1.dylib Moldeo.app/Contents/MacOS/liblua-5.1.dylib
@@ -175,26 +233,46 @@ install_name_tool -change ${libdir}/libpng16.16.dylib @executable_path/libpng16.
 #libXrandr.2.dylib
 cp ${libdir}/libXrandr.2.dylib Moldeo.app/Contents/MacOS
 install_name_tool -change ${libdir}/libXrandr.2.dylib @executable_path/libXrandr.2.dylib Moldeo.app/Contents/MacOS/libSDL-1.2.0.dylib
+install_name_tool -change ${libdir}/libXrandr.2.dylib @executable_path/libXrandr.2.dylib Moldeo.app/Contents/MacOS/libSDL2-2.0.0.dylib
 
 #libXext.6.dylib
 cp ${libdir}/libXext.6.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libXext.6.dylib @executable_path/libXext.6.dylib Moldeo.app/Contents/MacOS/libSDL2-2.0.0.dylib
 install_name_tool -change ${libdir}/libXext.6.dylib @executable_path/libXext.6.dylib Moldeo.app/Contents/MacOS/libSDL-1.2.0.dylib
 install_name_tool -change ${libdir}/libXext.6.dylib @executable_path/libXext.6.dylib Moldeo.app/Contents/MacOS/libXrandr.2.dylib
+install_name_tool -change ${libdir}/libXext.6.dylib @executable_path/libXext.6.dylib Moldeo.app/Contents/MacOS/libXinerama.1.dylib
+install_name_tool -change ${libdir}/libXext.6.dylib @executable_path/libXext.6.dylib Moldeo.app/Contents/MacOS/libXi.6.dylib
+install_name_tool -change ${libdir}/libXext.6.dylib @executable_path/libXext.6.dylib Moldeo.app/Contents/MacOS/libXss.1.dylib
+install_name_tool -change ${libdir}/libXext.6.dylib @executable_path/libXext.6.dylib Moldeo.app/Contents/MacOS/libXxf86vm.1.dylib
 
 
 
 #libXrender.1.dylib
 cp ${libdir}/libXrender.1.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libXrender.1.dylib @executable_path/libXrender.1.dylib Moldeo.app/Contents/MacOS/libSDL2-2.0.0.dylib
 install_name_tool -change ${libdir}/libXrender.1.dylib @executable_path/libXrender.1.dylib Moldeo.app/Contents/MacOS/libSDL-1.2.0.dylib
 install_name_tool -change ${libdir}/libXrender.1.dylib @executable_path/libXrender.1.dylib Moldeo.app/Contents/MacOS/libXrandr.2.dylib
+install_name_tool -change ${libdir}/libXrender.1.dylib @executable_path/libXrender.1.dylib Moldeo.app/Contents/MacOS/libXcursor.1.dylib
+
+#libXfixes.3.dylib
+cp ${libdir}/libXfixes.3.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libXfixes.3.dylib @executable_path/libXfixes.3.dylib Moldeo.app/Contents/MacOS/libXcursor.1.dylib
+
 
 
 #libX11.6.dylib
 cp ${libdir}/libX11.6.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libX11.6.dylib @executable_path/libX11.6.dylib Moldeo.app/Contents/MacOS/libSDL2-2.0.0.dylib
 install_name_tool -change ${libdir}/libX11.6.dylib @executable_path/libX11.6.dylib Moldeo.app/Contents/MacOS/libSDL-1.2.0.dylib
 install_name_tool -change ${libdir}/libX11.6.dylib @executable_path/libX11.6.dylib Moldeo.app/Contents/MacOS/libXext.6.dylib
 install_name_tool -change ${libdir}/libX11.6.dylib @executable_path/libX11.6.dylib Moldeo.app/Contents/MacOS/libXrandr.2.dylib
 install_name_tool -change ${libdir}/libX11.6.dylib @executable_path/libX11.6.dylib Moldeo.app/Contents/MacOS/libXrender.1.dylib
+install_name_tool -change ${libdir}/libX11.6.dylib @executable_path/libX11.6.dylib Moldeo.app/Contents/MacOS/libXcursor.1.dylib
+install_name_tool -change ${libdir}/libX11.6.dylib @executable_path/libX11.6.dylib Moldeo.app/Contents/MacOS/libXfixes.3.dylib
+install_name_tool -change ${libdir}/libX11.6.dylib @executable_path/libX11.6.dylib Moldeo.app/Contents/MacOS/libXinerama.1.dylib
+install_name_tool -change ${libdir}/libX11.6.dylib @executable_path/libX11.6.dylib Moldeo.app/Contents/MacOS/libXi.6.dylib
+install_name_tool -change ${libdir}/libX11.6.dylib @executable_path/libX11.6.dylib Moldeo.app/Contents/MacOS/libXss.1.dylib
+install_name_tool -change ${libdir}/libX11.6.dylib @executable_path/libX11.6.dylib Moldeo.app/Contents/MacOS/libXxf86vm.1.dylib
 
 #libxcb.1.dylib
 cp ${libdir}/libxcb.1.dylib Moldeo.app/Contents/MacOS
@@ -207,5 +285,32 @@ install_name_tool -change ${libdir}/libXau.6.dylib @executable_path/libXau.6.dyl
 #libXdmcp.6.dylib
 cp ${libdir}/libXdmcp.6.dylib Moldeo.app/Contents/MacOS
 install_name_tool -change ${libdir}/libXdmcp.6.dylib @executable_path/libXdmcp.6.dylib Moldeo.app/Contents/MacOS/libxcb.1.dylib
+
+#liblo.7.dylib
+cp ${libdir}/liblo.7.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/liblo.7.dylib @executable_path/liblo.7.dylib Moldeo.app/Contents/Resources/plugins/iodevices/libmoldeo_netoscin.dylib
+
+#libopencv_shape.3.1.dylib
+#cp ${libdir}/libopencv_*.3.1.dylib Moldeo.app/Contents/MacOS
+#install_name_tool -change ${libdir}/libopencv_shape.3.1.dylib @executable_path/libopencv_shape.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.dylib
+#install_name_tool -change ${libdir}/libopencv_videoio.3.1.dylib @executable_path/libopencv_videoio.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.dylib
+#install_name_tool -change ${libdir}/libopencv_video.3.1.dylib @executable_path/libopencv_video.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.dylib
+# install_name_tool -change ${libdir}/libopencv_video.3.1.dylib @executable_path/libopencv_video.3.1.dylib Moldeo.app/Contents/MacOS/libopencv_shape.3.1.dylib
+# install_name_tool -change ${libdir}/libopencv_imgproc.3.1.dylib @executable_path/libopencv_imgproc.3.1.dylib Moldeo.app/Contents/MacOS/libopencv_shape.3.1.dylib
+# install_name_tool -change ${libdir}/libopencv_core.3.1.dylib @executable_path/libopencv_core.3.1.dylib Moldeo.app/Contents/MacOS/libopencv_shape.3.1.dylib
+
+#install_name_tool -change ${libdir}/libopencv_calib3d.3.1.dylib @executable_path/libopencv_calib3d.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.dylib
+#install_name_tool -change ${libdir}/libopencv_core.3.1.dylib @executable_path/libopencv_core.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.dylib
+#install_name_tool -change ${libdir}/libopencv_features2d.3.1.dylib @executable_path/libopencv_features2d.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.dylib
+#install_name_tool -change ${libdir}/libopencv_flann.3.1.dylib @executable_path/libopencv_flann.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.dylib
+#install_name_tool -change ${libdir}/libopencv_highgui.3.1.dylib @executable_path/libopencv_highgui.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.dylib
+#install_name_tool -change ${libdir}/libopencv_imgcodecs.3.1.dylib @executable_path/libopencv_imgcodecs.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.dylib
+#install_name_tool -change ${libdir}/libopencv_imgproc.3.1.dylib @executable_path/libopencv_imgproc.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.dylib
+#install_name_tool -change ${libdir}/libopencv_ml.3.1.dylib @executable_path/libopencv_ml.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.dylib
+#install_name_tool -change ${libdir}/libopencv_objdetect.3.1.dylib @executable_path/libopencv_objdetect.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.dylib
+#install_name_tool -change ${libdir}/libopencv_photo.3.1.dylib @executable_path/libopencv_photo.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.dylib
+#install_name_tool -change ${libdir}/libopencv_stitching.3.1.dylib @executable_path/libopencv_stitching.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.dylib
+#install_name_tool -change ${libdir}/libopencv_superres.3.1.dylib @executable_path/libopencv_superres.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.dylib
+#install_name_tool -change ${libdir}/libopencv_videostab.3.1.dylib @executable_path/libopencv_videostab.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.dylib
 
 rm moldeo.icns
