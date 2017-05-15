@@ -39,9 +39,13 @@
 		<Project filename="../../moldeoplugins/MasterEffects/Ligia/ligialinux.cbp" />
 		<Project filename="../../moldeoplugins/MasterEffects/MasterChannel/masterchannellinux.cbp" />
 		<Project filename="../../moldeoplugins/MasterEffects/Panel/panellinux.cbp" />
+		<Project filename="../../moldeoplayer/moldeoplayersdl2/build/win/moldeoplayersdl2.cbp" />
 		<Project filename="../../moldeoplugins/MasterEffects/PresetPanel/presetpanellinux.cbp" />
 		<Project filename="../../moldeodirector/build/linux/moldeodirector.cbp" />
 		<Project filename="../../moldeoplugins/Effects/RegularSolid/regularsolidlinux.cbp" />
 		<Project filename="../../libwxmoldeocontrols/build/win/wxMoldeoControls.cbp" />
+		<Project filename="../../moldeoplugins/Effects/Webview/webviewlinux.cbp" />
+		<Project filename="../../moldeoplugins/Resources/OpenFace/openfacelinux.cbp" />
+		<Project filename="../../Video/build/win/moldeovideo.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

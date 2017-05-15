@@ -161,4 +161,9 @@ install_name_tool -change ${libdir}/libXau.6.dylib @executable_path/libXau.6.dyl
 cp ${libdir}/libXdmcp.6.dylib Moldeo.app/Contents/MacOS
 install_name_tool -change ${libdir}/libXdmcp.6.dylib @executable_path/libXdmcp.6.dylib Moldeo.app/Contents/MacOS/libxcb.1.dylib
 
+#opencv
+cp ${libdir}/libopencv_shape.3.1.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libopencv_shape.3.1.dylib @executable_path/libopencv_shape.3.1.dylib Moldeo.app/Contents/Resources/plugins/resources/libmoldeo_opencv.0.dylib
+
+
 rm moldeo.icns
