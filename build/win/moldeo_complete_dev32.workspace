@@ -2,6 +2,7 @@
 <CodeBlocks_workspace_file>
 	<Workspace title="Moldeo">
 		<Project filename="../../libmoldeo/build/win/libmoldeo.cbp" />
+		<Project filename="../../libmoldeo/build/win/libmoldeog010.cbp" />
 		<Project filename="../../moldeoplayer/moldeoplayersdl2/build/win/moldeoplayersdl2.cbp" />
 		<Project filename="../../moldeoplugins/Effects/Image/image.cbp" />
 		<Project filename="../../moldeoplugins/Effects/Icon/icon.cbp" />
@@ -43,6 +44,7 @@
 		<Project filename="../../moldeoplugins/MasterEffects/Panel/panel.cbp" />
 		<Project filename="../../moldeoplugins/MasterEffects/PresetPanel/presetpanel.cbp" />
 		<Project filename="../../moldeoplayer/moldeoplayersdl/build/win/moldeoplayersdl.cbp" />
+		<Project filename="../../moldeoplugins/Effects/Text/text.cbp" />
 		<Project filename="../../libwxmoldeocontrols/build/win/wxMoldeoControls.cbp" />
 		<Project filename="../../moldeodirector/build/win/moldeodirector.cbp" />
 	</Workspace>
