@@ -7,7 +7,7 @@ This package has all necesarry submodules to compile from source "Moldeo 1.0". Y
 
 Este paquete contiene todos los submódulos para compilar "Moldeo 1.0" desde el código fuente. Se debe descargar el código fuente de este repositorio y luego ejecutar el script que se detalla a continuación en las instrucciones. Esto es código fuente abierto, sin garantías.
 
-####Linux
+#### Linux
 
 Just run in a terminal window to compile and install:
 
@@ -19,7 +19,7 @@ Then launch Moldeo 1.0 Beta with:
 
     ./moldeo.sh
 	
-####Mac OSX
+#### Mac OSX
 
 Just check binary installers at:
 
@@ -40,7 +40,7 @@ Then launch Moldeo 1.0 Beta with:
 
     ./moldeo.sh
 
-####Windows
+#### Windows
 
 Just check binary installers at:
 
