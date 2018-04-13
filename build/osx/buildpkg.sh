@@ -58,9 +58,9 @@ Distribution.xml
 
 sed -i "" \
 -e '$ i\
-\    <title>Moldeo Installer</title>' \
+\    <title>Moldeo for Mac OSX</title>' \
 -e '$ i\
-\    <background file="background.png" alignment="topleft" scaling="none" />' \
+\    <background file="background.png" alignment="topleft" scaling="proportional" />' \
 -e '$ i\
 \    <welcome file="license.txt" />' \
 "Distribution.xml"
