@@ -47,5 +47,7 @@
 		<Project filename="../../moldeoplugins/Effects/Webview/webviewlinux.cbp" />
 		<Project filename="../../moldeoplugins/Resources/OpenFace/openfacelinux.cbp" />
 		<Project filename="../../Video/build/win/moldeovideo.cbp" />
+		<Project filename="../../moldeoplugins/Effects/LiveDrawing2/livedrawing2.cbp" />
+		<Project filename="../../../ParticlesFractal/particlesfractallinux.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

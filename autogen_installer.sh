@@ -11,8 +11,7 @@ sudo apt-get install autoconf libtool automake libmuparser-dev lua5.1-dev libtin
 sudo apt-get install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
 
 #Moldeo Plugins
-sudo apt-get install libopencv-dev python-opencv
-sudo install-opencv.sh
+sudo apt-get install autoremove libopencv-dev python-opencv
 sudo apt-get install doxygen graphviz
 sudo apt-get install openjdk-7-jdk
 sudo apt-get install openjdk-8-jdk
@@ -34,6 +33,7 @@ git checkout master && git pull
 cd IODevices/Kinect
 ./install_OpenNI.sh
 cd ../../
+sudo ./install-opencv.sh
 ./autogen.sh --prefix=/usr
 make
 sudo make install
@@ -65,5 +65,3 @@ git checkout master && git pull
 ./autogen.sh --prefix=/usr
 make
 sudo make install
-
-
