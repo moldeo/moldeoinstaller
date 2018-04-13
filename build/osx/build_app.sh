@@ -54,6 +54,12 @@ cd MoldeoControl && npm install
 cd ../
 sudo nwbuild --platforms "osx32" --version 0.12.2 --macIcns ./moldeo.icns --appName "Moldeo" --appVersion "1.0.0" ./MoldeoControl
 sudo chown -R moldeo:staff ./build
+sudo chmod -R +r ./build
+sudo chmod +x ./build/MoldeoControl/osx32/MoldeoControl.app/Contents/MacOS/nwjs
+sudo chmod +x ./build/MoldeoControl/osx32/MoldeoControl.app/Contents/Frameworks/nwjs\ Helper.app/Contents/MacOS/nwjs\ Helper
+sudo chmod +x ./build/MoldeoControl/osx32/MoldeoControl.app/Contents/Frameworks/nwjs\ Helper\ EH.app/Contents/MacOS/nwjs\ Helper\ EH
+sudo chmod +x ./build/MoldeoControl/osx32/MoldeoControl.app/Contents/Frameworks/nwjs\ Helper\ NP.app/Contents/MacOS/nwjs\ Helper\ NP
+
 cp -R ./build/MoldeoControl/osx32/MoldeoControl.app Moldeo.app
 
 mkdir Moldeo.app
@@ -446,12 +452,10 @@ install_name_tool -change ${libdir}/libtbb.dylib @executable_path/libtbb.dylib M
 install_name_tool -change ${libdir}/libtbb.dylib @executable_path/libtbb.dylib Moldeo.app/Contents/MacOS/libopencv_shape.${ocv}.dylib
 install_name_tool -change ${libdir}/libtbb.dylib @executable_path/libtbb.dylib Moldeo.app/Contents/MacOS/libopencv_highgui.${ocv}.dylib
 install_name_tool -change ${libdir}/libtbb.dylib @executable_path/libtbb.dylib Moldeo.app/Contents/MacOS/libopencv_stereo.${ocv}.dylib
-
+#
 install_name_tool -change ${libdir}/libwebp.7.dylib @executable_path/libwebp.7.dylib Moldeo.app/Contents/MacOS/libopencv_imgcodecs.${ocv}.dylib
-
+#
 install_name_tool -change ${libdir}/libharfbuzz.0.dylib @executable_path/libharfbuzz.0.dylib Moldeo.app/Contents/MacOS/libopencv_freetype.${ocv}.dylib
-
-
-
-
+install_name_tool -change ${libdir}/libfreetype.6.dylib @executable_path/libfreetype.6.dylib Moldeo.app/Contents/MacOS/libopencv_freetype.${ocv}.dylib
+#
 rm moldeo.icns

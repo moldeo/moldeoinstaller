@@ -149,7 +149,7 @@
 	<key>CFBundleIconFile</key>
 	<string>moldeo.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>org.moldeointeractive.moldeo</string>
+	<string>com.moldeointeractive.moldeo</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -157,7 +157,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0 (build 151)</string>
+	<string>1.0 (build 1.1.0.0)</string>
 	<key>CFBundleSignature</key>
 	<string>MOL</string>
 	<key>CFBundleURLTypes</key>
@@ -200,7 +200,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.0.151</string>
+	<string>1.1.0.0</string>
 	<key>NSAppleScriptEnabled</key>
 	<true/>
 	<key>LSApplicationCategoryType</key>
