@@ -56,4 +56,13 @@ productbuild --synthesize --package Moldeo.pkg \
 --package ./gstflat/osx-framework-1.9.1-x86_64.pkg \
 Distribution.xml
 
-productbuild --distribution ./Distribution.xml --package-path . --package-path ./gstflat/  ./MoldeoInstaller.pkg
+sed -i "" \
+-e '$ i\
+\    <title>Moldeo Installer</title>' \
+-e '$ i\
+\    <background file="background.png" alignment="topleft" scaling="none" />' \
+-e '$ i\
+\    <welcome file="license.txt" />' \
+"Distribution.xml"
+
+productbuild --distribution ./Distribution.xml --package-path . --package-path ./gstflat/ --resources ./Resources  ./MoldeoInstaller.pkg
