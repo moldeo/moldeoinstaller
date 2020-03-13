@@ -11,49 +11,51 @@ pkgbuild --analyze --root ./MoldeoApp MoldeoAppComponents.plist
 /usr/libexec/PlistBuddy -c 'set :0:BundleIsRelocatable false' MoldeoAppComponents.plist
 pkgbuild --identifier com.moldeointeractive.moldeo --version 1.0 --root ./MoldeoApp --component-plist ./MoldeoAppComponents.plist Moldeo.pkg
 
-pkgutil --flatten ./gst/base-crypto-1.9.1-x86_64.pkg ./gstflat/base-crypto-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/base-system-1.0-1.9.1-x86_64.pkg ./gstflat/base-system-1.0-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/gstreamer-1.0-capture-1.9.1-x86_64.pkg ./gstflat/gstreamer-1.0-capture-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/gstreamer-1.0-codecs-1.9.1-x86_64.pkg ./gstflat/gstreamer-1.0-codecs-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/gstreamer-1.0-codecs-gpl-1.9.1-x86_64.pkg ./gstflat/gstreamer-1.0-codecs-gpl-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/gstreamer-1.0-codecs-restricted-1.9.1-x86_64.pkg ./gstflat/gstreamer-1.0-codecs-restricted-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/gstreamer-1.0-core-1.9.1-x86_64.pkg ./gstflat/gstreamer-1.0-core-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/gstreamer-1.0-devtools-1.9.1-x86_64.pkg ./gstflat/gstreamer-1.0-devtools-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/gstreamer-1.0-dvd-1.9.1-x86_64.pkg ./gstflat/gstreamer-1.0-dvd-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/gstreamer-1.0-editing-1.9.1-x86_64.pkg ./gstflat/gstreamer-1.0-editing-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/gstreamer-1.0-effects-1.9.1-x86_64.pkg ./gstflat/gstreamer-1.0-effects-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/gstreamer-1.0-encoding-1.9.1-x86_64.pkg ./gstflat/gstreamer-1.0-encoding-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/gstreamer-1.0-libav-1.9.1-x86_64.pkg ./gstflat/gstreamer-1.0-libav-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/gstreamer-1.0-net-1.9.1-x86_64.pkg ./gstflat/gstreamer-1.0-net-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/gstreamer-1.0-net-restricted-1.9.1-x86_64.pkg ./gstflat/gstreamer-1.0-net-restricted-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/gstreamer-1.0-playback-1.9.1-x86_64.pkg ./gstflat/gstreamer-1.0-playback-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/gstreamer-1.0-system-1.9.1-x86_64.pkg ./gstflat/gstreamer-1.0-system-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/gstreamer-1.0-visualizers-1.9.1-x86_64.pkg ./gstflat/gstreamer-1.0-visualizers-1.9.1-x86_64.pkg
-pkgutil --flatten ./gst/osx-framework-1.9.1-x86_64.pkg ./gstflat/osx-framework-1.9.1-x86_64.pkg
+gstv=1.9.90
+echo 'GStreamer version: '${gstv}
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/base-crypto-${gstv}-x86_64.pkg ./gstflat/base-crypto-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/base-system-1.0-${gstv}-x86_64.pkg ./gstflat/base-system-1.0-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/gstreamer-1.0-capture-${gstv}-x86_64.pkg ./gstflat/gstreamer-1.0-capture-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/gstreamer-1.0-codecs-${gstv}-x86_64.pkg ./gstflat/gstreamer-1.0-codecs-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/gstreamer-1.0-codecs-gpl-${gstv}-x86_64.pkg ./gstflat/gstreamer-1.0-codecs-gpl-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/gstreamer-1.0-codecs-restricted-${gstv}-x86_64.pkg ./gstflat/gstreamer-1.0-codecs-restricted-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/gstreamer-1.0-core-${gstv}-x86_64.pkg ./gstflat/gstreamer-1.0-core-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/gstreamer-1.0-devtools-${gstv}-x86_64.pkg ./gstflat/gstreamer-1.0-devtools-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/gstreamer-1.0-dvd-${gstv}-x86_64.pkg ./gstflat/gstreamer-1.0-dvd-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/gstreamer-1.0-editing-${gstv}-x86_64.pkg ./gstflat/gstreamer-1.0-editing-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/gstreamer-1.0-effects-${gstv}-x86_64.pkg ./gstflat/gstreamer-1.0-effects-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/gstreamer-1.0-encoding-${gstv}-x86_64.pkg ./gstflat/gstreamer-1.0-encoding-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/gstreamer-1.0-libav-${gstv}-x86_64.pkg ./gstflat/gstreamer-1.0-libav-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/gstreamer-1.0-net-${gstv}-x86_64.pkg ./gstflat/gstreamer-1.0-net-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/gstreamer-1.0-net-restricted-${gstv}-x86_64.pkg ./gstflat/gstreamer-1.0-net-restricted-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/gstreamer-1.0-playback-${gstv}-x86_64.pkg ./gstflat/gstreamer-1.0-playback-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/gstreamer-1.0-system-${gstv}-x86_64.pkg ./gstflat/gstreamer-1.0-system-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/gstreamer-1.0-visualizers-${gstv}-x86_64.pkg ./gstflat/gstreamer-1.0-visualizers-${gstv}-x86_64.pkg
+pkgutil --flatten ./gstreamer-1.0-${gstv}-x86_64/osx-framework-${gstv}-x86_64.pkg ./gstflat/osx-framework-${gstv}-x86_64.pkg
 
 
 
 
 productbuild --synthesize --package Moldeo.pkg \
---package ./gstflat/base-crypto-1.9.1-x86_64.pkg \
---package ./gstflat/base-system-1.0-1.9.1-x86_64.pkg \
---package ./gstflat/gstreamer-1.0-capture-1.9.1-x86_64.pkg \
---package ./gstflat/gstreamer-1.0-codecs-1.9.1-x86_64.pkg \
---package ./gstflat/gstreamer-1.0-codecs-gpl-1.9.1-x86_64.pkg \
---package ./gstflat/gstreamer-1.0-codecs-restricted-1.9.1-x86_64.pkg \
---package ./gstflat/gstreamer-1.0-core-1.9.1-x86_64.pkg \
---package ./gstflat/gstreamer-1.0-devtools-1.9.1-x86_64.pkg \
---package ./gstflat/gstreamer-1.0-dvd-1.9.1-x86_64.pkg \
---package ./gstflat/gstreamer-1.0-editing-1.9.1-x86_64.pkg \
---package ./gstflat/gstreamer-1.0-effects-1.9.1-x86_64.pkg \
---package ./gstflat/gstreamer-1.0-encoding-1.9.1-x86_64.pkg \
---package ./gstflat/gstreamer-1.0-libav-1.9.1-x86_64.pkg \
---package ./gstflat/gstreamer-1.0-net-1.9.1-x86_64.pkg \
---package ./gstflat/gstreamer-1.0-net-restricted-1.9.1-x86_64.pkg \
---package ./gstflat/gstreamer-1.0-playback-1.9.1-x86_64.pkg \
---package ./gstflat/gstreamer-1.0-system-1.9.1-x86_64.pkg \
---package ./gstflat/gstreamer-1.0-visualizers-1.9.1-x86_64.pkg \
---package ./gstflat/osx-framework-1.9.1-x86_64.pkg \
+--package ./gstflat/base-crypto-${gstv}-x86_64.pkg \
+--package ./gstflat/base-system-1.0-${gstv}-x86_64.pkg \
+--package ./gstflat/gstreamer-1.0-capture-${gstv}-x86_64.pkg \
+--package ./gstflat/gstreamer-1.0-codecs-${gstv}-x86_64.pkg \
+--package ./gstflat/gstreamer-1.0-codecs-gpl-${gstv}-x86_64.pkg \
+--package ./gstflat/gstreamer-1.0-codecs-restricted-${gstv}-x86_64.pkg \
+--package ./gstflat/gstreamer-1.0-core-${gstv}-x86_64.pkg \
+--package ./gstflat/gstreamer-1.0-devtools-${gstv}-x86_64.pkg \
+--package ./gstflat/gstreamer-1.0-dvd-${gstv}-x86_64.pkg \
+--package ./gstflat/gstreamer-1.0-editing-${gstv}-x86_64.pkg \
+--package ./gstflat/gstreamer-1.0-effects-${gstv}-x86_64.pkg \
+--package ./gstflat/gstreamer-1.0-encoding-${gstv}-x86_64.pkg \
+--package ./gstflat/gstreamer-1.0-libav-${gstv}-x86_64.pkg \
+--package ./gstflat/gstreamer-1.0-net-${gstv}-x86_64.pkg \
+--package ./gstflat/gstreamer-1.0-net-restricted-${gstv}-x86_64.pkg \
+--package ./gstflat/gstreamer-1.0-playback-${gstv}-x86_64.pkg \
+--package ./gstflat/gstreamer-1.0-system-${gstv}-x86_64.pkg \
+--package ./gstflat/gstreamer-1.0-visualizers-${gstv}-x86_64.pkg \
+--package ./gstflat/osx-framework-${gstv}-x86_64.pkg \
 Distribution.xml
 
 sed -i "" \

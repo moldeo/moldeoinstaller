@@ -144,6 +144,7 @@ install_name_tool -change ${libdir}/libalut.0.dylib @executable_path/libalut.0.d
 #libopenal.1.dylib
 cp ${libdir}/libopenal.1.dylib Moldeo.app/Contents/MacOS
 install_name_tool -change ${libdir}/libopenal.1.dylib @executable_path/libopenal.1.dylib Moldeo.app/Contents/Resources/plugins/effects/libmoldeo_sound3d.dylib
+install_name_tool -change ${libdir}/libopenal.1.dylib @executable_path/libopenal.1.dylib Moldeo.app/Contents/MacOS/libalut.0.dylib
 
 #libsndfile.1.dylib
 cp ${libdir}/libsndfile.1.dylib Moldeo.app/Contents/MacOS
@@ -302,6 +303,16 @@ install_name_tool -change ${libdir}/libXdmcp.6.dylib @executable_path/libXdmcp.6
 cp ${libdir}/liblo.7.dylib Moldeo.app/Contents/MacOS
 install_name_tool -change ${libdir}/liblo.7.dylib @executable_path/liblo.7.dylib Moldeo.app/Contents/Resources/plugins/iodevices/libmoldeo_netoscin.dylib
 install_name_tool -change ${libdir}/liblo.7.dylib @executable_path/liblo.7.dylib Moldeo.app/Contents/Resources/plugins/iodevices/libmoldeo_netoscout.dylib
+
+#FAUST
+cp /usr/lib/libc++.1.dylib Moldeo.app/Contents/MacOS
+cp /usr/local/lib/libfaust.2.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libalut.0.dylib @executable_path/libalut.0.dylib Moldeo.app/Contents/Resources/plugins/effects/libmoldeo_soundfaust.dylib
+install_name_tool -change ${libdir}/libopenal.1.dylib @executable_path/libopenal.1.dylib Moldeo.app/Contents/Resources/plugins/effects/libmoldeo_soundfaust.dylib
+install_name_tool -change /usr/lib/libc++.1.dylib @executable_path/libc++.1.dylib Moldeo.app/Contents/Resources/plugins/effects/libmoldeo_soundfaust.dylib
+install_name_tool -change ${libdir}/libsndfile.1.dylib @executable_path/libsndfile.1.dylib Moldeo.app/Contents/Resources/plugins/effects/libmoldeo_soundfaust.dylib
+install_name_tool -change @rpath/libfaust.2.dylib @executable_path/libfaust.2.dylib Moldeo.app/Contents/Resources/plugins/effects/libmoldeo_soundfaust.dylib
+
 
 #
 rm moldeo.icns
