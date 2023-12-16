@@ -34,34 +34,39 @@ port install gstreamer010*
 port install boost +universal
 #port install autoconf-archive
 port install check
+port install libtool
+port install intltool
+port install automake
+port install pkgconfig
 
 
-
+wget https://gstreamer.freedesktop.org/data/pkg/osx/1.20.2/gstreamer-1.0-1.20.2-universal.pkg
+wget https://gstreamer.freedesktop.org/data/pkg/osx/1.20.2/gstreamer-1.0-devel-1.20.2-universal.pkg
 
 #libmoldeo
-#sudo apt-get install 
-#libmuparser-dev 
-#lua5.1-dev 
-#libtinyxml-dev 
-#!!! libgtk2.0-dev 
-#libsdl1.2-dev 
-#libsdl2-dev 
-#libglew-dev 
-#freeglut3-dev 
+#sudo apt-get install
+#libmuparser-dev
+#lua5.1-dev
+#libtinyxml-dev
+#!!! libgtk2.0-dev
+#libsdl1.2-dev
+#libsdl2-dev
+#libglew-dev
+#freeglut3-dev
 
 #BAD!! libgle3-dev
 
-#ftgl-dev 
-#libfreeimage-dev 
+#ftgl-dev
+#libfreeimage-dev
 #libalut-dev
 #libgstreamer0.10-dev
-#libgstreamer-plugins-base0.10-dev 
+#libgstreamer-plugins-base0.10-dev
 #libboost-dev
-#libboost-filesystem-dev 
+#libboost-filesystem-dev
 #libboost-thread-dev
-#libboost-system-dev 
-#libasio-dev 
-#autoconf-archive 
+#libboost-system-dev
+#libasio-dev
+#autoconf-archive
 #check
 
 #Moldeo Plugins
@@ -69,7 +74,7 @@ port install check
 port install opencv
 port install doxygen
 port install graphviz
-#CHECK!! javacc or gjdb 
+#CHECK!! javacc or gjdb
 #port install openjdk-7-jdk
 
 #Moldeo Director
