@@ -52,7 +52,7 @@ rm -Rf ./build
 cp -R ../../moldeonet/MoldeoControl ./MoldeoControl
 cd MoldeoControl && npm install
 cd ../
-sudo nwbuild --platforms "osx32" --version 0.12.2 --macIcns ./moldeo.icns --appName "Moldeo" --appVersion "1.0.0" ./MoldeoControl
+sudo nwbuild --platforms "osxarm" --version 0.62.2 --macIcns ./moldeo.icns --appName "Moldeo" --appVersion "1.0.0" ./MoldeoControl
 sudo chown -R moldeo:staff ./build
 sudo chmod -R +r ./build
 sudo chmod +x ./build/MoldeoControl/osx32/MoldeoControl.app/Contents/MacOS/nwjs
