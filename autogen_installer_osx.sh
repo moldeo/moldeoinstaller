@@ -71,7 +71,10 @@ wget https://gstreamer.freedesktop.org/data/pkg/osx/1.20.2/gstreamer-1.0-devel-1
 
 #Moldeo Plugins
 #sudo apt-get install libopencv-dev doxygen graphviz openjdk-7-jdk
-port install opencv
+port install liblo
+port install portmidi
+port install libsndfile
+port install opencv3
 port install doxygen
 port install graphviz
 #CHECK!! javacc or gjdb
