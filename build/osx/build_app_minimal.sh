@@ -51,16 +51,16 @@ rm -Rf ./build
 
 cp -R ../../moldeonet/MoldeoControl ./MoldeoControl
 cd MoldeoControl && npm install
+nwbuild ./* --platform "osx" --version 0.62.2 --outDir ../out
 cd ../
-sudo nwbuild --platforms "osx32" --version 0.12.2 --macIcns ./moldeo.icns --appName "Moldeo" --appVersion "1.0.0" ./MoldeoControl
-sudo chown -R moldeo:staff ./build
-sudo chmod -R +r ./build
-sudo chmod +x ./build/MoldeoControl/osx32/MoldeoControl.app/Contents/MacOS/nwjs
-sudo chmod +x ./build/MoldeoControl/osx32/MoldeoControl.app/Contents/Frameworks/nwjs\ Helper.app/Contents/MacOS/nwjs\ Helper
-sudo chmod +x ./build/MoldeoControl/osx32/MoldeoControl.app/Contents/Frameworks/nwjs\ Helper\ EH.app/Contents/MacOS/nwjs\ Helper\ EH
-sudo chmod +x ./build/MoldeoControl/osx32/MoldeoControl.app/Contents/Frameworks/nwjs\ Helper\ NP.app/Contents/MacOS/nwjs\ Helper\ NP
+sudo chown -R moldeo:staff ./out
+sudo chmod -R +r ./out
+sudo chmod +x ./out/MoldeoControl.app/Contents/MacOS/nwjs
+sudo chmod +x ./out/MoldeoControl.app/Contents/Frameworks/nwjs\ Helper.app/Contents/MacOS/nwjs\ Helper
+sudo chmod +x ./out/MoldeoControl.app/Contents/Frameworks/nwjs\ Helper\ EH.app/Contents/MacOS/nwjs\ Helper\ EH
+sudo chmod +x ./out/MoldeoControl.app/Contents/Frameworks/nwjs\ Helper\ NP.app/Contents/MacOS/nwjs\ Helper\ NP
 
-cp -R ./build/MoldeoControl/osx32/MoldeoControl.app Moldeo.app
+cp -R ./out/MoldeoControl.app Moldeo.app
 
 mkdir Moldeo.app
 mkdir Moldeo.app/Contents
