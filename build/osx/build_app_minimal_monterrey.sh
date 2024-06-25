@@ -46,22 +46,32 @@ cp ${moldeologo} moldeo.iconset/icon_512x512@2x.png
 iconutil -c icns moldeo.iconset
 rm -R moldeo.iconset
 rm -Rf Moldeo.app
-rm -Rf MoldeoControl
-rm -Rf ./build
+sudo rm -Rf MoldeoControl
+sudo rm -Rf ./build
+sudo rm -Rf ./out
+mkdir out
+mkdir cache
+#DOWNLOAD VErSION OF NWJS (0.88.0) version osx arm64 if using M1 or M2
+# remove all quarantine extended attributes with
+#sudo xattr -cr cache/*
+#install node and npm based on nwjs version, for 0.88.0 its node 22.0.0, using nvm its nvm install 22.0.0
+# and to active nvm active 22.0.0
+#
 
 cp -R ../../moldeonet/MoldeoControl ./MoldeoControl
 cd MoldeoControl && npm install
+#nwbuild ./* --platform "osx" --arch "arm64" --version 0.88.0 --outDir ../out
+#nwbuild ./* --platform "osx" --arch "x64" --version 0.88.0  --flavor sdk --outDir ../out
+sudo nwbuild ./* --platform "osx" --arch "arm64" --version 0.88.0 --outDir ../out  --cacheDir ../cache
 cd ../
-sudo npm install -g nw-builder@3.8.1
-sudo nwbuild --platform "osx" --arch "arm64" --version 0.62.2 --macIcns ./moldeo.icns --appName "Moldeo" --appVersion "1.0.0" ./MoldeoControl
-sudo chown -R moldeo:staff ./build
-sudo chmod -R +r ./build
-sudo chmod +x ./build/MoldeoControl/osx32/MoldeoControl.app/Contents/MacOS/nwjs
-sudo chmod +x ./build/MoldeoControl/osx32/MoldeoControl.app/Contents/Frameworks/nwjs\ Helper.app/Contents/MacOS/nwjs\ Helper
-sudo chmod +x ./build/MoldeoControl/osx32/MoldeoControl.app/Contents/Frameworks/nwjs\ Helper\ EH.app/Contents/MacOS/nwjs\ Helper\ EH
-sudo chmod +x ./build/MoldeoControl/osx32/MoldeoControl.app/Contents/Frameworks/nwjs\ Helper\ NP.app/Contents/MacOS/nwjs\ Helper\ NP
+sudo chown -R aimeguzman:staff ./out
+sudo chmod -R +r ./out
+sudo chmod +x ./out/MoldeoControl.app/Contents/MacOS/nwjs
+sudo chmod +x ./out/MoldeoControl.app/Contents/Frameworks/nwjs\ Helper.app/Contents/MacOS/nwjs\ Helper
+sudo chmod +x ./out/MoldeoControl.app/Contents/Frameworks/nwjs\ Helper\ EH.app/Contents/MacOS/nwjs\ Helper\ EH
+sudo chmod +x ./out/MoldeoControl.app/Contents/Frameworks/nwjs\ Helper\ NP.app/Contents/MacOS/nwjs\ Helper\ NP
 
-cp -R ./build/MoldeoControl/osx32/MoldeoControl.app Moldeo.app
+cp -R ./out/MoldeoControl.app Moldeo.app
 
 mkdir Moldeo.app
 mkdir Moldeo.app/Contents
@@ -109,6 +119,18 @@ cp ${moldeoplayersdl2} Moldeo.app/Contents/MacOS
 cp Info.plist Moldeo.app/Contents
 
 echo "relinking libs"
+
+#gstreamer
+#install_name_tool -change @rpath/GStreamer /Library/Frameworks/GStreamer.framework/GStreamer Moldeo.app/Contents/MacOS/libmoldeo.0.dylib
+#install_name_tool -change @rpath/GStreamer /Library/Frameworks/GStreamer.framework/GStreamer Moldeo.app/Contents/MacOS/moldeoplayersdl2
+install_name_tool -add_rpath /Library/Frameworks/GStreamer.framework Moldeo.app/Contents/MacOS/libmoldeo.0.dylib
+install_name_tool -add_rpath /Library/Frameworks/GStreamer.framework/Libraries Moldeo.app/Contents/MacOS/libmoldeo.0.dylib
+install_name_tool -add_rpath /Library/Frameworks/GStreamer.framework/Versions/1.0 Moldeo.app/Contents/MacOS/libmoldeo.0.dylib
+
+install_name_tool -add_rpath /Library/Frameworks/GStreamer.framework Moldeo.app/Contents/MacOS/moldeoplayersdl2
+install_name_tool -add_rpath /Library/Frameworks/GStreamer.framework/Libraries Moldeo.app/Contents/MacOS/moldeoplayersdl2
+install_name_tool -add_rpath /Library/Frameworks/GStreamer.framework/Versions/1.0 Moldeo.app/Contents/MacOS/moldeoplayersdl2
+
 #sdl2
 cp ${libdir}/libSDL2-2.0.0.dylib Moldeo.app/Contents/MacOS
 install_name_tool -change ${libdir}/libSDL2-2.0.0.dylib @executable_path/libSDL2-2.0.0.dylib ${mp2}
@@ -199,9 +221,9 @@ install_name_tool -change ${libdir}/libboost_system-mt.dylib @executable_path/li
 install_name_tool -change ${libdir}/libboost_system-mt.dylib @executable_path/libboost_system-mt.dylib Moldeo.app/Contents/MacOS/libboost_filesystem-mt.dylib
 
 #libGLEW.2.1.0.dylib
-cp ${libdir}/libGLEW.2.1.0.dylib Moldeo.app/Contents/MacOS
-install_name_tool -change ${libdir}/libGLEW.2.1.0.dylib @executable_path/libGLEW.2.1.0.dylib ${mp2}
-install_name_tool -change ${libdir}/libGLEW.2.1.0.dylib @executable_path/libGLEW.2.1.0.dylib Moldeo.app/Contents/MacOS/libmoldeo.0.dylib
+cp ${libdir}/libGLEW.2.2.0.dylib Moldeo.app/Contents/MacOS
+install_name_tool -change ${libdir}/libGLEW.2.2.0.dylib @executable_path/libGLEW.2.2.0.dylib ${mp2}
+install_name_tool -change ${libdir}/libGLEW.2.2.0.dylib @executable_path/libGLEW.2.2.0.dylib Moldeo.app/Contents/MacOS/libmoldeo.0.dylib
 
 #lua-5.1/liblua-5.1.dylib
 cp ${libdir}/lua-5.1/liblua-5.1.dylib Moldeo.app/Contents/MacOS/liblua-5.1.dylib
